@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Manager - Add Employee</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex">
+        <!-- Sidebar (Same as other pages) -->
+        <div class="bg-blue-800 text-white w-64 py-4 flex flex-col">
+            <div class="px-4 py-4 border-b border-blue-700">
+                <h1 class="text-2xl font-bold">HR Manager</h1>
+            </div>
+            <nav class="flex-1 px-2 py-4 space-y-2">
+                <a href="index.html" class="flex items-center px-4 py-3 text-gray-300 hover:bg-blue-700 rounded-lg">
+                    <i class="fas fa-tachometer-alt mr-3"></i>
+                    Dashboard
+                </a>
+                <a href="employees.html" class="flex items-center px-4 py-3 bg-blue-700 rounded-lg">
+                    <i class="fas fa-users mr-3"></i>
+                    Employees
+                </a>
+                <a href="departments.html" class="flex items-center px-4 py-3 text-gray-300 hover:bg-blue-700 rounded-lg">
+                    <i class="fas fa-building mr-3"></i>
+                    Departments
+                </a>
+                <a href="job_titles.html" class="flex items-center px-4 py-3 text-gray-300 hover:bg-blue-700 rounded-lg">
+                    <i class="fas fa-briefcase mr-3"></i>
+                    Job Titles
+                </a>
+                <a href="reports.html" class="flex items-center px-4 py-3 text-gray-300 hover:bg-blue-700 rounded-lg">
+                    <i class="fas fa-chart-bar mr-3"></i>
+                    Reports
+                </a>
+            </nav>
+            <div class="px-4 py-4 border-t border-blue-700">
+                <a href="login.html" class="flex items-center text-gray-300 hover:text-white">
+                    <i class="fas fa-sign-out-alt mr-3"></i>
+                    Logout
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <!-- Top Header -->
+            <header class="bg-white shadow-sm">
+                <div class="flex items-center justify-between px-6 py-4">
+                    <div class="flex items-center">
+                        <h2 class="text-xl font-semibold text-gray-800">Add New Employee</h2>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button class="relative">
+                            <i class="fas fa-bell text-gray-600 text-xl"></i>
+                            <span class="absolute top-0 right-0 -mt-1 -mr-1 px-2 py-0.5 bg-red-500 text-white text-xs rounded-full">3</span>
+                        </button>
+                        <div class="flex items-center">
+                            <img class="h-8 w-8 rounded-full" src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Profile">
+                            <span class="ml-2 text-gray-700">HR Manager</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-6">
+                <!-- Breadcrumb -->
+                <nav class="text-sm mb-6">
+                    <ol class="list-none p-0 inline-flex">
+                        <li class="flex items-center">
+                            <a href="employees.html" class="text-gray-600 hover:text-blue-600">Employees</a>
+                            <i class="fas fa-chevron-right text-gray-400 mx-2"></i>
+                        </li>
+                        <li class="text-blue-600">Add New Employee</li>
+                    </ol>
+                </nav>
+
+                <!-- Add Employee Form -->
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <form id="addEmployeeForm" class="space-y-6">
+                        <!-- Personal Information -->
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Personal Information</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Employee ID</label>
+                                    <input type="text" name="employeeId" required
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                        placeholder="Enter employee ID">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                                    <input type="text" name="fullName" required
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                        placeholder="Enter full name">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                    <input type="email" name="email" required
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                        placeholder="Enter email address">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number</label>
+                                    <input type="tel" name="phone"
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                        placeholder="Enter phone number">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Date of Birth</label>
+                                    <input type="date" name="dateOfBirth" required
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Gender</label>
+                                    <select name="gender" required
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500">
+                                        <option value="">Select gender</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Employment Details -->
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Employment Details</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Department</label>
+                                    <select name="department" required
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500">
+                                        <option value="">Select department</option>
+                                        <option value="it">IT</option>
+                                        <option value="hr">HR</option>
+                                        <option value="marketing">Marketing</option>
+                                        <option value="finance">Finance</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Job Title</label>
+                                    <select name="jobTitle" required
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500">
+                                        <option value="">Select job title</option>
+                                        <option value="developer">Developer</option>
+                                        <option value="manager">Manager</option>
+                                        <option value="analyst">Analyst</option>
+                                        <option value="designer">Designer</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Employment Status</label>
+                                    <select name="employmentStatus" required
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500">
+                                        <option value="">Select status</option>
+                                        <option value="fullTime">Full Time</option>
+                                        <option value="partTime">Part Time</option>
+                                        <option value="contract">Contract</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Join Date</label>
+                                    <input type="date" name="joinDate" required
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Salary Information -->
+                        <div>
+                            <h3 class="text-lg font-medium text-gray-900 mb-4">Salary Information</h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Basic Salary</label>
+                                    <input type="number" name="basicSalary" required
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
+                                        placeholder="Enter basic salary">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Payment Type</label>
+                                    <select name="paymentType" required
+                                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500">
+                                        <option value="">Select payment type</option>
+                                        <option value="monthly">Monthly</option>
+                                        <option value="hourly">Hourly</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form Actions -->
+                        <div class="flex justify-end space-x-4 pt-4 border-t">
+                            <button type="button" onclick="window.location.href='employees.html'"
+                                class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                Cancel
+                            </button>
+                            <button type="submit"
+                                class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                Add Employee
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="hidden fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 sm:mx-0 sm:h-10 sm:w-10">
+                            <i class="fas fa-check text-green-600"></i>
+                        </div>
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">Success</h3>
+                            <div class="mt-2">
+                                <p class="text-sm text-gray-500">Employee has been added successfully.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button" onclick="window.location.href='employees.html'"
+                        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">
+                        Go to Employees
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('addEmployeeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add form submission logic here
+            document.getElementById('successModal').classList.remove('hidden');
+        });
+    </script>
+</body>
+</html>
